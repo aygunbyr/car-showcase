@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { CarProps } from '@/types';
 import { CarDetails, CustomButton } from '.';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImageUrl } from '@/utils';
 
 interface CarCardProps {
   car: CarProps;
@@ -39,9 +39,7 @@ const CarCard = ({ car }: CarCardProps) => {
         https://nextjs.org/docs/pages/api-reference/components/image#fill
         */}
         <Image
-          src="/hero.png"
-          // width={50}
-          // height={50}
+          src={generateCarImageUrl(car)}
           alt="car model"
           fill
           priority
